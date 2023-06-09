@@ -1,0 +1,7 @@
+{
+  "name": "ORDERING",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
