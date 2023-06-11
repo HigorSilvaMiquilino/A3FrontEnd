@@ -38,6 +38,12 @@
   </ion-item>
 
   <ion-item *ngIf="user">
+    <ion-label>Telephone</ion-label>
+    <ion-textarea [(ngModel)]="user.telephone" placeholder="Telephone"></ion-textarea>
+  </ion-item>
+
+
+  <ion-item *ngIf="user">
     <ion-label>Is Service Provider</ion-label>
     <ion-checkbox [(ngModel)]="user.isServiceProvider"></ion-checkbox>
   </ion-item>

@@ -18,6 +18,7 @@ export class RegisterPage implements OnInit {
   service: string = 'none'
   pic: string
   bio: string
+  telephone: any
   constructor(private http: HttpClient,
     private alertController: AlertController, private router: Router) {
     this.firstName = ''
@@ -26,6 +27,7 @@ export class RegisterPage implements OnInit {
     this.password =''
     this.pic = ''
     this.bio = ''
+    this.telephone = null
   }
 
   ngOnInit() {
@@ -49,7 +51,8 @@ export class RegisterPage implements OnInit {
       service: this.service,
       bio: this.bio,
       pic: this.pic,
-      isServiceProvider: this.isServiceProvider
+      isServiceProvider: this.isServiceProvider,
+      telephone: this.telephone
 
     }
     this.http.post('http://localhost:3000/users/register',user)
