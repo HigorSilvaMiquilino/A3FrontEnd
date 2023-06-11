@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="email" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="password" placeholder="password" type="password"></ion-input>
+  </ion-item>
+
+
+  <ion-button color="dark" expand="block" (click)="login()" >
+    Login
+  </ion-button>
+  <p class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner></ion-spinner>
+  </p>
+
+  <p class="ion-text-center">Don't have an account? <strong routerLink="/register">Register.</strong></p>
+
+</ion-content>

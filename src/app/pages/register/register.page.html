@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar class="ion-too-colors">
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="Email" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="password" placeholder="Password" type="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="firstName" placeholder="first Name" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="lastName" placeholder="Last Name" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="pic" placeholder="Picture Url" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="bio" placeholder="Bio" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Are you a service provider?</ion-label>
+    <ion-select placeholder="Select" (ionChange)="onServiceSelect($event)">
+      <ion-select-option value="yes">Yes</ion-select-option>
+      <ion-select-option value="no">No</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item *ngIf="isServiceProvider">
+      <ion-label>Sercice</ion-label>
+      <ion-select placeholder="All" [(ngModel)]="service">
+        <ion-select-option value="Lawyer">Lawyer</ion-select-option>
+        <ion-select-option value="Software developer">Software developer</ion-select-option>
+        <ion-select-option value="Administrative assistant">Administrative assistant</ion-select-option>
+        <ion-select-option value="Police officer">Police officer</ion-select-option>
+        <ion-select-option value="Mechanic">Mechanic</ion-select-option>
+        <ion-select-option value="Truck Driver">Truck Driver</ion-select-option>
+        <ion-select-option value="Office clerk">Office clerk</ion-select-option>
+      </ion-select>
+  </ion-item>
+  <ion-button class="ion-button-colors" expand="block" (click)="register()">Register</ion-button>
+
+  <p class="ion-text-center">Already have an account? <strong routerLink="/login">Login.</strong></p>
+</ion-content>

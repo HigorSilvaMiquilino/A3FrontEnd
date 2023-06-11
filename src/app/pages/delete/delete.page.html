@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>delete</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">delete</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label>First Name</ion-label>
+    <ion-input [(ngModel)]="firstName" placeholder="Enter First Name" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button color="danger" expand="block" (click)="deleteUser()">Delete Account</ion-button>
+</ion-content>

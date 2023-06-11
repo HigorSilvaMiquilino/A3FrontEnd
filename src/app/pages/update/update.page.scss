@@ -1,0 +1,25 @@
+ion-toolbar {
+  color: #000000;
+  background-color: #ff8800;
+}
+
+ion-button{
+  color: #000000;
+  background-color: #ff8800;
+  font: bold;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.custom-toolbar {
+  --ion-toolbar-background: rgb(228, 158, 6);
+  --ion-color-primary: #ffffff;
+}
+
+.button-colors {
+  --ion-color-primary: rgb(228, 158, 6);
+}
+
+

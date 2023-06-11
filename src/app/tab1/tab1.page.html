@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Services</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <h4 class="heading">Filter</h4>
+
+  <ion-item>
+    <ion-label>Service</ion-label>
+    <ion-select placeholder="All" [(ngModel)]="selectedService" (ionChange)="onServiceSelect($event)">
+      <ion-select-option value="">All</ion-select-option>
+      <ion-select-option value="Lawyer">Lawyer</ion-select-option>
+      <ion-select-option value="Software developer">Software developer</ion-select-option>
+      <ion-select-option value="Administrative assistant">Administrative assistant</ion-select-option>
+      <ion-select-option value="Police officer">Police officer</ion-select-option>
+      <ion-select-option value="Mechanic">Mechanic</ion-select-option>
+      <ion-select-option value="Truck Driver">Truck Driver</ion-select-option>
+      <ion-select-option value="Office clerk">Office clerk</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <h4 class="heading">Browse</h4>
+  <ion-list *ngIf="serviceProviders">
+    <ion-item *ngFor="let provider of serviceProviders">
+      <ion-thumbnail slot="start">
+          <img src="{{provider.pic}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h3 class="heading">{{provider.firstName}} {{provider.lastName}}</h3>
+        <p>{{provider.bio}}</p>
+        <ion-badge color="dark">{{provider.service}}</ion-badge>
+      </ion-label>
+    </ion-item>
+
+    <ion-card>
+      <ion-card-content class="ion-card-register">
+        <p class="ion-text-center"><strong routerLink="/register">Register</strong></p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content class="ion-card-update">
+        <p class="ion-text-center"><strong routerLink="/update">Update</strong></p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content class="ion-card-delete">
+        <p class="ion-text-center"><strong routerLink="/delete">Delete</strong></p>
+      </ion-card-content>
+    </ion-card>
+
+
+
+  </ion-list>
+</ion-content>
